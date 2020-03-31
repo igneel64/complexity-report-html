@@ -1,9 +1,6 @@
 const escomplex = require("typhonjs-escomplex");
 
 module.exports = async function calculateComplexity(source) {
-  const fileResult = {
-    methods: []
-  };
   const {
     aggregate: { cyclomatic: fileComplexity },
     lineEnd,

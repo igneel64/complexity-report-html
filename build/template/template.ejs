@@ -1,0 +1,25 @@
+<html>
+  <head> </head>
+  <body>
+    <div class="report__heading">
+      <h1>Complexity report</h1>
+      <span>Generated at: <%= new Date() %></span>
+    </div>
+    <div class="graph__container">
+      <canvas id="complexity"></canvas>
+    </div>
+    <div class="graph__container">
+      <canvas id="length"></canvas>
+    </div>
+    <div class="graph__container">
+      <canvas id="function"></canvas>
+    </div>
+    <% if (htmlWebpackPlugin.options.window) { %>
+    <script>
+      <% for (var varName in htmlWebpackPlugin.options.window) { %>
+        window['<%=varName%>'] = <%= JSON.stringify(htmlWebpackPlugin.options.window[varName]) %>;
+      <% } %>
+    </script>
+    <% } %>
+  </body>
+</html>

@@ -1,18 +1,13 @@
-import Chart from "chart.js";
+import "../styles/index.scss";
+import fileComplexityGraph from "./graphs/fileComplexity";
+import fileLengthGraph from "./graphs/fileLength";
+import functionComplexityGraph from "./graphs/functionComplexity";
+const REPORT_RESULT = window.REPORT_RESULT;
 
-(function buildCharts(){
-  const domComplexityGraph = document.getElementById("graph");
-  const complexityChart = new Chart(domComplexityGraph, {
-    type: 'bar',
-    data: {
-      datasets: [{
-          barPercentage: 0.5,
-          barThickness: 6,
-          maxBarThickness: 8,
-          minBarLength: 2,
-          data: [10, 20, 30, 40, 50, 60, 70]
-      }]
-  }
-  });
+const poorMansClone = source => JSON.parse(JSON.stringify(source));
 
+(function buildCharts() {
+  fileComplexityGraph(poorMansClone(REPORT_RESULT));
+  fileLengthGraph(poorMansClone(REPORT_RESULT));
+  functionComplexityGraph(poorMansClone(REPORT_RESULT));
 })();

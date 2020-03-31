@@ -1,0 +1,21 @@
+body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: #bdd1f8;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #1a233a;
+}
+
+.graph__container {
+  position: relative;
+  background-color: #272e48;
+  border-color: #464d5c;
+  padding: 20px;
+  margin: 20px 0px;
+  border-radius: 8px;
+  height: 400px;
+}
+
+.report__heading {
+  margin: 30px 0px;
+}

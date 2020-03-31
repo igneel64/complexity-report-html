@@ -1,28 +1,46 @@
 {
-  "name": "complexity-report",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "complexity-report-html",
+  "version": "0.0.1",
+  "description": "A simple CLI tool to generate a complexity report for your JavaScript source files",
+  "main": "./src/cli/index.js",
+  "bin": {
+    "complexity-report": "./src/cli/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "report": "node src/processing.js"
+    "build": "webpack --config ./build/webpack/webpack.prod.js && npm run clean-unused",
+    "clean-unused": "rimraf ./build/out/unused.js",
+    "dev": "npm run report-dev && webpack-dev-server --config ./build/webpack/webpack.dev.js",
+    "report-dev": "./src/cli/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "graphs",
+    "complexity",
+    "reporting"
+  ],
+  "author": {
+    "name": "Peter Perlepes",
+    "email": "p.perlepes@gmail.com"
+  },
   "license": "ISC",
   "dependencies": {
-    "chart.js": "^2.9.3",
-    "ejs": "^3.0.2",
     "eslint": "^6.8.0",
     "glob": "^7.1.6",
-    "html-webpack-inline-source-plugin": "^1.0.0-beta.2",
-    "html-webpack-plugin": "^4.0.3",
     "sade": "^1.7.3",
-    "typhonjs-escomplex": "^0.1.0",
-    "webpack": "^4.42.1"
+    "typhonjs-escomplex": "^0.1.0"
   },
   "devDependencies": {
-    "webpack-cli": "^3.3.11"
+    "webpack-dev-server": "^3.10.3",
+    "webpack": "^4.42.1",
+    "webpack-merge": "^4.2.2",
+    "webpack-cli": "^3.3.11",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "node-sass": "^4.13.1",
+    "rimraf": "^3.0.2",
+    "css-loader": "^3.4.2",
+    "chart.js": "^2.9.3",
+    "html-webpack-inline-source-plugin": "^1.0.0-beta.2",
+    "html-webpack-plugin": "^4.0.3"
   }
 }

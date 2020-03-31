@@ -1,13 +1,14 @@
+#!/usr/bin/env node
 const sade = require("sade");
 const pkg = require("../../package");
-const fileProcessing = require("../processing");
+const analyze = require("../analyze");
 
-sade("cmp-rep")
+sade("complexity-report")
   .command("generate [dir]", "", {
     default: true
   })
   .version(pkg.version)
   .describe("Generate a straightforward complexity report")
   .example("./src")
-  .action(fileProcessing)
+  .action(analyze)
   .parse(process.argv);

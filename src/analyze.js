@@ -31,5 +31,4 @@ module.exports = async function analyze(givenDirectory = BASE_DIR) {
   );
 
   writeToTemplate(results);
-  // console.log(results);
 };
