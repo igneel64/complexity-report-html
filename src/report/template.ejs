@@ -1,0 +1,13 @@
+<html>
+  <head> </head>
+  <body>
+    <canvas id="graph" width="400" height="400"></canvas>
+    <% if (htmlWebpackPlugin.options.window) { %>
+    <script>
+      <% for (var varName in htmlWebpackPlugin.options.window) { %>
+        window['<%=varName%>'] = <%= JSON.stringify(htmlWebpackPlugin.options.window[varName]) %>;
+      <% } %>
+    </script>
+    <% } %>
+  </body>
+</html>
