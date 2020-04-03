@@ -11,7 +11,11 @@
     "build": "webpack --config ./build/webpack/webpack.prod.js && npm run clean-unused",
     "clean-unused": "rimraf ./build/out/unused.js",
     "dev": "npm run report-dev && webpack-dev-server --config ./build/webpack/webpack.dev.js",
-    "report-dev": "./src/cli/index.js"
+    "report-dev": "./src/cli/index.js",
+    "prerelease": "npm run build",
+    "release": "npm version -m \"Released %s !\"",
+    "postrelease": "npm run push && npm publish",
+    "push": "git push origin master && git push origin --tags"
   },
   "keywords": [
     "graphs",
@@ -29,6 +33,10 @@
     "sade": "^1.7.3",
     "typhonjs-escomplex": "^0.1.0"
   },
+  "files": [
+    "src",
+    "build"
+  ],
   "devDependencies": {
     "@types/jest": "^25.1.5",
     "chart.js": "^2.9.3",
@@ -44,5 +52,13 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igneel64/complexity-report-html.git"
+  },
+  "bugs": {
+    "url": "https://github.com/igneel64/complexity-report-html/issues"
+  },
+  "homepage": "https://github.com/igneel64/complexity-report-html#readme"
 }
