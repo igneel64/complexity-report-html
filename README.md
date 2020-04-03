@@ -1,5 +1,4 @@
 <p align="center">
-	<p align="center">Coming soon &#9935;</p>
 	<p align="center" style="font-size: 2rem;margin: 0;"></p>
 	<h2 align="center">complexity-report-html &#128171;</h3>
 	<p><i>Simple interactive graphs that drive change</i></p>
