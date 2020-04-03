@@ -3,7 +3,7 @@ const path = require("path");
 const TEMPLATE_PATH = path.resolve(__dirname, "../../build/out/index.html");
 const OUT_PATH = path.resolve(process.cwd(), ".complexity-report");
 
-module.exports = function(reportResults) {
+module.exports = function (reportResults) {
   if (!fs.existsSync(OUT_PATH)) {
     fs.mkdirSync(OUT_PATH);
   }
