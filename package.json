@@ -60,5 +60,8 @@
   "bugs": {
     "url": "https://github.com/igneel64/complexity-report-html/issues"
   },
-  "homepage": "https://github.com/igneel64/complexity-report-html#readme"
+  "homepage": "https://github.com/igneel64/complexity-report-html#readme",
+  "engines": {
+    "node": ">=10"
+  }
 }
