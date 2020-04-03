@@ -18,28 +18,35 @@ function fileComplexityGraph(reportResults) {
           data: fileComplexity,
           backgroundColor: "rgba(163, 94, 2, 0.85)",
           borderColor: "rgba(163, 94, 2, 0.95)",
-          borderWidth: 1
-        }
-      ]
+          borderWidth: 1,
+        },
+      ],
     },
     options: {
       scales: {
         yAxes: [
           {
             ticks: {
-              beginAtZero: true
-            }
-          }
-        ]
+              beginAtZero: true,
+            },
+          },
+        ],
       },
       legend: {
         labels: {
           fontSize: 16,
-          fontColor: "#bdd1f8"
+          fontColor: "#bdd1f8",
         },
-        align: "end"
-      }
-    }
+        align: "end",
+      },
+      tooltips: {
+        callbacks: {
+          label: function (tooltipItem) {
+            return `File Complexity ${tooltipItem.value}`;
+          },
+        },
+      },
+    },
   });
 }
 

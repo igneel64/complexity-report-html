@@ -21,28 +21,35 @@ function fileLengthGraph(reportResults) {
           data: fileLength,
           backgroundColor: "rgba(97, 225, 161, 0.55)",
           borderColor: "rgba(97, 225, 161, 0.85)",
-          borderWidth: 1
-        }
-      ]
+          borderWidth: 1,
+        },
+      ],
     },
     options: {
       scales: {
         yAxes: [
           {
             ticks: {
-              beginAtZero: true
-            }
-          }
-        ]
+              beginAtZero: true,
+            },
+          },
+        ],
       },
       legend: {
         labels: {
           fontSize: 16,
-          fontColor: "#bdd1f8"
+          fontColor: "#bdd1f8",
         },
-        align: "end"
-      }
-    }
+        align: "end",
+      },
+      tooltips: {
+        callbacks: {
+          label: function (tooltipItem) {
+            return `${tooltipItem.value} lines`;
+          },
+        },
+      },
+    },
   });
 }
 

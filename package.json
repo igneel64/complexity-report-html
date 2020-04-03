@@ -4,7 +4,7 @@
   "description": "A simple CLI tool to generate a complexity report for your JavaScript source files",
   "main": "./src/cli/index.js",
   "bin": {
-    "complexity-report": "./src/cli/index.js"
+    "complexity-report-html": "./src/cli/index.js"
   },
   "scripts": {
     "test": "jest",
