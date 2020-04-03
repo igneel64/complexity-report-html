@@ -1,6 +1,6 @@
 {
   "name": "complexity-report-html",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple CLI tool to generate a complexity report for your JavaScript source files",
   "main": "./src/cli/index.js",
   "bin": {
